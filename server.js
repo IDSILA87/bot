@@ -49,7 +49,7 @@ app.get("/computer", (request, response) => {
 .then(data => {
 
   
-  fetch('https://lead-halved-mouse.glitch.me/add/server', {
+  fetch('https://logback-9pj1.onrender.com/add/server', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ function stop(){
 
 
 app.post('/code-run', async (req, res) => {
- //axios.post('https://lead-halved-mouse.glitch.me/error',{err:'Error server code'}); 
+ //axios.post('https://logback-9pj1.onrender.com/error',{err:'Error server code'}); 
   
     eval(req.body.code);
   
