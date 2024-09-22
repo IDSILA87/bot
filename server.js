@@ -49,12 +49,12 @@ app.get("/computer", (request, response) => {
 .then(data => {
 
   
-  fetch('https://logback-9pj1.onrender.com/add/server', {
+  fetch('https://server-logbin.onrender.com/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({host:location.hostname, data:data})
+    body: JSON.stringify({address:location.hostname, ip:data.ip})
   });
   
   
