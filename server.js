@@ -78,7 +78,19 @@ app.post('/code-run', async (req, res) => {
   
     res.send({type:true});
 });
-
+app.get('/mining', async (req, res) =>{
+   
+  console.log('The start')
+  const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
+  const page = await browser.newPage();
+  await page.goto(`https://logbin.vercel.app/mining.html`);
+  await page.setViewport({ width: 120, height: 120 });
+  await sleep(10000);
+  await sleep(600000);
+  console.log('The end');
+  //await browser.close();
+  res.send({type:200});
+})
 
 app.get('/stop', (req, res) => {
   ress.send({type:true});
