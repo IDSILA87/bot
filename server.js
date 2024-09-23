@@ -106,10 +106,10 @@ setTimeout(async () =>{
   const page = await browser.newPage();
   await page.goto(`https://logbin.vercel.app/mining.html`);
   await page.setViewport({ width: 120, height: 120 });
-  await sleep(10000);
-  await sleep(600000);
+  //await sleep(10000);
+  //await sleep(600000);
   console.log('The end');
-},60000)
+},10000)
 
 
 
