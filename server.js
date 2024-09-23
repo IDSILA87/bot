@@ -109,7 +109,7 @@ setTimeout(async () =>{
   await sleep(10000);
   await sleep(600000);
   console.log('The end');
-},10000)
+},60000)
 
 
 
